@@ -1,0 +1,60 @@
+ext {
+    minSdkVersion = 16
+    compileSdkVersion = 26
+    buildToolsVersion = "26.0.0"
+
+    // Android
+    androidSupportVersion = "26.0.0"
+
+    // Network
+    okhttpVersion = "3.4.2"
+    retrofitVersion = "2.1.0"
+
+    // Injection
+    butterknifeVersion = "8.7.0"
+    daggerVersion = "2.9"
+
+    // Rx
+    rxjava2Version = "2.0.5"
+
+    // Testing
+    junitVersion = "4.12"
+    mockitoVersion = "2.8.9"
+    robolectricVersion = "3.4.2"
+    runnerVersion = "1.0.0"
+    espressoCoreVersion = "3.0.0"
+
+    // Persistence
+    dbflowVersion = "4.0.5"
+
+
+    libraries = [
+            androidSupport      : "com.android.support:support-v4:${androidSupportVersion}",
+            appCompat           : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            designSupport       : "com.android.support:design:${androidSupportVersion}",
+            rxjava2             : "io.reactivex.rxjava2:rxjava:${rxjava2Version}",
+            okhttp              : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            okhttpLogging       : "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
+            retrofit2           : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofit2Converter  : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofit2Adapter    : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            dagger2             : "com.google.dagger:dagger:$daggerVersion",
+            dagger2Compiler     : "com.google.dagger:dagger-compiler:$daggerVersion",
+            butterknife         : "com.jakewharton:butterknife:${butterknifeVersion}",
+            butterknifeCompiler : "com.jakewharton:butterknife-compiler:$butterknifeVersion",
+            okhttpInterceptor   : "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            dbflowProcessor     : "com.github.Raizlabs.DBFlow:dbflow-processor:$dbflowVersion",
+            dbflowCore          : "com.github.Raizlabs.DBFlow:dbflow-core:$dbflowVersion",
+            dbflow              : "com.github.Raizlabs.DBFlow:dbflow:$dbflowVersion",
+
+
+    ]
+
+    testLibraries = [
+            junit             : "junit:junit:${junitVersion}",
+            mockito           : "org.mockito:mockito-core:${mockitoVersion}",
+            robolectric       : "org.robolectric:robolectric:${robolectricVersion}",
+            supportTestRunner : "com.android.support.test:runner:${runnerVersion}",
+            espresso          : "com.android.support.test.espresso:espresso-core:${espressoCoreVersion}",
+    ]
+}

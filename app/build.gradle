@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.repositorydbflow"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.compileSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Android
+    implementation rootProject.ext.libraries.appCompat
+    compile rootProject.ext.libraries.androidSupport
+    compile rootProject.ext.libraries.designSupport
+
+    // Persistence
+    implementation rootProject.ext.libraries.dbflow
+    implementation rootProject.ext.libraries.dbflowCore
+    annotationProcessor rootProject.ext.libraries.dbflowProcessor
+
+    // Testing
+    testImplementation rootProject.ext.testLibraries.junit
+    testImplementation rootProject.ext.testLibraries.mockito
+    androidTestImplementation rootProject.ext.testLibraries.supportTestRunner
+
+    // Injection
+    implementation rootProject.ext.libraries.dagger2
+    annotationProcessor rootProject.ext.libraries.dagger2Compiler
+    implementation rootProject.ext.libraries.butterknife
+    annotationProcessor rootProject.ext.libraries.butterknifeCompiler
+}
